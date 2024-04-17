@@ -21,7 +21,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('logout', [UserController::class,'logout'])->name('logout');
 
     Route::middleware('admin')->group(function () {
-        
+        Route::get('get_users', [AdminController::class,'getusers'])->name('get_users');
+        Route::post('add_post', [AdminController::class,'addPost'])->name('add_post');
+        Route::post('add_notification', [AdminController::class,'addNotification'])->name('add_notification');
+        Route::post('post_delete', [AdminController::class,'post_delete'])->name('post_delete');
        
     });
 });
