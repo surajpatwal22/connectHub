@@ -19,6 +19,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('get_profile', [UserController::class,'getProfile'])->name('get_profile');
     Route::post('update_profile', [UserController::class,'updateProfile'])->name('update_profile');
     Route::post('logout', [UserController::class,'logout'])->name('logout');
+    Route::get('get_notifications', [PostController::class,'get_notifications'])->name('get_notifications');
+    Route::get('get_posts', [PostController::class,'get_posts'])->name('get_posts');
+    Route::post('like', [PostController::class,'like'])->name('like');
+    Route::post('comment', [PostController::class,'comment'])->name('comment');
+    Route::post('comment_delete', [PostController::class,'comment_delete'])->name('comment_delete');
 
     Route::middleware('admin')->group(function () {
         Route::get('get_users', [AdminController::class,'getusers'])->name('get_users');

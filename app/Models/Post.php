@@ -15,7 +15,7 @@ class Post extends Model
         'file','file_type','title','description'
     ];
 
-    protected $appends = ['post_data','likes','like_flag','total_comments','date','time','time_difference'];
+    protected $appends = ['post_data','likes','like_flag','total_comments'];
 
 
     public function getPostDataAttribute(){

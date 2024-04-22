@@ -84,8 +84,8 @@ class AdminController extends Controller
                 foreach ($users as $user) {
                     $token = $user->device_id;
                     $notification = [
-                        'title' => 'AstroPandit Haridwar ',
-                        'body' => 'guruji added a new post of '.$request->title,
+                        'title' => 'New post Availabe ',
+                        'body' => 'Admin added a new post of '.$request->title,
                     ];
                     fcmnotify($token,$notification);
                 }
